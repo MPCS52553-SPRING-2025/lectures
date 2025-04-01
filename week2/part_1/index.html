@@ -16,13 +16,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Week 2</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
     <h1>Welcome to Week 2</h1>
 
     <div>
-      <h2>My favorite kinds of fruits:</h2>
+      <h2>My favorite kinds of <a href="">fruits</a>:</h2>
       
       <ul>
         <li>Apples</li>
@@ -31,21 +32,31 @@
       </ul>
     </div>
 
+    <style>
+      main { display: flex; }
+      h2 { text-align: center;}
+    </style>
 
-    <h2>Prospective Undergraduate Students</h2>
+    <main>
+      <section>
+        <h2>Prospective Undergraduate Students</h2>
+        <p>
+          The College is <span id="highlight">renowned for its Core curriculum</span>, providing students a liberal education that encourages them to explore complex ideas and processes and empowers their lifelong goals. Learn more about visiting the University of Chicago as a prospective undergraduate student.
+        </p>
+      </section>
 
-    <p>
-      The College is renowned for its Core curriculum, providing students a liberal education that encourages them to explore complex ideas and processes and empowers their lifelong goals. Learn more about visiting the University of Chicago as a prospective undergraduate student.
-    </p>
-    
-    <h2>Prospective Graduate Students</h2>
-    <p>
-      As one of the world’s leading research universities, UChicago empowers students and scholars to ask big questions and challenge conventional thinking. It has over more than 100 graduate programs to advance your academic career. Learn more about visiting the University as a prospective graduate student below.
-    </p>
+      <section>
+        <h2>Prospective Graduate Students</h2>
+        <p>
+          As one of the world’s leading research universities, UChicago empowers students and scholars to ask big questions and challenge conventional thinking. It has over more than 100 graduate programs to advance your academic career. Learn more about visiting the University as a prospective graduate student below.
+        </p>
+      </section>
 
-    <h2>Touring Chicago and Hyde Park</h2>
-    <p>One of the defining aspects of UChicago is its location in the vibrant Hyde Park neighborhood, just 20 minutes south of downtown Chicago. Our global city presence offers countless opportunities that connect learning on campus to the world outside of the classroom.</p>
-
+      <section>
+        <h2>Touring Chicago and Hyde Park</h2>
+        <p>One of the defining aspects of UChicago is its location in the vibrant Hyde Park neighborhood, just 20 minutes south of downtown Chicago. Our global city presence offers countless opportunities that connect learning on campus to the world outside of the classroom.</p>
+      </section>
+    </main>
   </body>
 
 </html>
