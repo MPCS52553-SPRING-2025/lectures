@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+#get-location {
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  border-radius: 6px;
+  padding: 8px;
+  font-weight: normal;
+}
