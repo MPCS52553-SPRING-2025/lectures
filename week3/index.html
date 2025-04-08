@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Intro to Modern JavaScript, Part 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      main { display: flex; justify-content: space-around;  flex-wrap: wrap;}
+      div { flex-basis: 40%; }
+    </style>
+
+    <script src="index.js"></script>
+  </head>
+
+  <body id="index_page">
+
+    <nav>
+      <a href="index.html">MPCS-52553 - Intro to Modern JavaScript</a>
+      <ul>
+        <li><a href="dice.html">Dice</a></li>
+        <li><a href="gps.html">Satellite Image</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div>
+        <h2>Variables and Objects</h2>
+        <ul>
+          <li>Use <code>let</code> or <code>const</code> to define variables.</li>
+          <li>Arrays use <code>[ ]</code> brackets.</li>
+          <li>Objects are key-value containers and use <code>{ }</code> braces.</li>
+          <li>Try using the <code>window</code> object to pop up an alert.</li>
+          <li>Watch out for type conversions! Use <code>===</code> instead of <code>==</code>.</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h2>Modifying the DOM</h2>
+        <ul>
+          <li><code>querySelector()</code> function to get a single element</li>
+          <li><code>querySelectorAll()</code> function to get an array of matching elements</li>
+          <li>Use a <code>for...of</code> loop to iterate over an array.</li>
+          <li>Be sure to wait for the <code>DOMContentLoaded</code> event on the <code>document</code> object.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Events</h2>
+        <ul>
+          <li>Use <code>addEventListener()</code> to handle a specific event on a specific DOM element.</li>
+          <li>Experiment with <code>monitorEvents()</code> in the Console to see what's possible.</li>
+        </ul>
+      </div>
+
+
+
+      <div>
+        <h2 id="challenges">Challenges</h2>
+        <ul>
+          <li><strong>Challenge 1</strong>: Make one of the <code>h2</code> headings disappear when you click on it.</li>
+          <li><strong>Challenge 2</strong>: When you <a href="https://www.apple.com" id="apple">click here to go to
+              Apple.com</a>, show an alert box instead.</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h2>Built-In Goodies</h2>
+        <ul>
+          <li>Play with the Chrome Console to get a feel for what's possible!</li>
+
+          <li>Global objects</li>
+          <ul>
+            <li><code>window</code></li>
+            <li><code>document</code></li>
+            <li><code>console</code></li>
+            <li><code>navigator</code></li>
+          </ul>
+        </ul>
+      </div>
+
+      <div>
+      <h2>DOM Cheat Sheet</h2>
+      <ul>
+        <li><code>window.querySelectorAll()</code> will return an array of all elements matching the given CSS selector
+          expression.</li>
+        <hr>
+        <li><code>element.style</code></li>
+        <li><code>element.parentElement</code></li>
+        <li><code>element.textContent</code></li>
+        <li><code>element.innerHTML</code></li>
+        <hr>
+        <li><code>window.alert(...)</code></li>
+        <li><code>window.confirm(...)</code></li>
+        <hr>
+        <li><code>console.debug(...)</code> and <code>console.log(...)</code> are synonymous</li>
+        <li><code>console.warn(...)</code></li>
+        <li><code>console.error(...)</code></li>
+      </ul>
+      </div>
+      <div>
+      <h2>JavaScript Objects</h2>
+      <pre><code>
+  let monster = { name: "Cookie Monster",
+            favorite_color: "Blue",
+            favorite_fruit: "Cookies",
+            speak: function() { alert("Me want cookie!"); }
+  };
+
+  monster.speak();
+  </code></pre>
+      <img src="images/cookie_monster.png">
+
+      <h2>JavaScript Syntax and Cheat Sheet</h2>
+      <ul>
+        <li>This week, the <code>images</code> subfolder contains images of dice.</li>
+        <li>Use <code>let</code> or <code>const</code> to define variables.</li>
+        <li>Define page-wide functions with the <code>function</code> keyword.</li>
+        <li>You can also define functions by assigning them to variable names, like this:
+        <pre><code>
+  let f = function(arg1, arg2) {
+  // code goes here
+  } </code></pre>
+        </li>
+        <li> Given an element <code>elem</code>, you can attach a "click" event handler with:
+          <code>elem.addEventListener("click", myFunctionName)</code>
+        </li>
+        <li>Your event handler functions should accept one argument, which is the event object:
+          <pre><code>
+    let myHandler = function(event_obj) { ... } </code></pre>
+        </li>
+        <li>To prevent the browser from also responding to a click event, you can call
+          <code>event_obj.preventDefault();</code>
+        </li>
+        <li>When inside an event handler function, you can refer to the original
+          element by using <code>event.target</code>.</li>
+      </ul>
+      </div>
+    </main>
+
+    
+  </body>
+</html>
