@@ -8,6 +8,12 @@ img {
   box-shadow: 12px 12px #AAAAAA;
   border-radius: 12px;
 }
+
+@media (width < 500px) {
+  main {
+    display: block;
+  }
+}
 main { 
   display: flex;
   justify-content: space-between;
@@ -27,4 +33,10 @@ section {
   text-align: center;
   flex-basis: 30%;
   padding: 12px;
+}
+
+@media (width < 500px) {
+  section {
+    margin-bottom: 2em;
+  }
 }
