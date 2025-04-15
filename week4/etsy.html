@@ -4,59 +4,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etsy</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
   <style>
     body  {
       font-family: "Noto Sans", sans-serif;
-      width: 960px;
-      margin: 12px auto;
     }
-    header { 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    h1 { color: darkorange; }
-    input { width: 60%; border-radius: 2em; padding: 10px; }
-    .holiday {
-      display: flex;
-      justify-content: space-between;
-      height: 400px;
-      gap: 2em;
-    } 
-    .holiday img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 2em;
-    }
-    img:hover {
-      box-shadow: 6px 6px 6px #AAA;
-    }
-    .wide { flex: 3 }
-    .narrow { flex: 1 }
   </style>
 </head>
-<body>
+<body class="w-4/5 mt-4 mx-auto">
+
   <header>
-    <h1>Etsy</h1>
-    <p>Categories</p>
-    <input type="search">
-    <p>Sign In</p>
-    <p>Gifts</p>
-    <p>Cart</p>
+    <div class="flex justify-between gap-2 items-center">
+      <h1 class="text-3xl text-orange-700">Etsy</h1>
+      <p>Categories</p>
+      <input class="rounded-lg border p-2 w-2/3"></input>
+      <p>Sign In</p>
+    </div>
+
+    <div class="hidden sm:flex justify-center mt-4 bg-pink-200 py-4 hover:bg-blue-200">
+      <div class="w-1/2 flex gap-4 justify-between font-semibold text-purple-800">
+        <p>Gifts</p>
+        <p>Mother's Day Gifts</p>
+        <p>Home Favorites</p>
+      </div>
+    </div>
   </header>
 
-  <main>
-
-    <section class="holiday">
-      <p class="wide" ><img src="https://i.etsystatic.com/ij/eebe50/6747141416/ij_1020x810.6747141416_o2t9vbv0.jpg?version=0" alt=""></p>
-      <p class="narrow"><img src="https://i.etsystatic.com/56948573/r/il/44ed21/6691515489/il_800x800.6691515489_8ihj.jpg" alt=""></p>
-      
-    </section>
-
-    <section class="trends">
-
-    </section>
-
-  </main>
+  <section>
+    <img src="" alt="">
+    <img src="" alt="">
+  </section>
 </body>
 </html>
