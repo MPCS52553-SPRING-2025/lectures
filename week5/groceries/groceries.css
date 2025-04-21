@@ -1,0 +1,33 @@
+html {
+  background-color: #EEE;
+}
+
+input {
+  padding: 12px;
+  border: solid 1px #CCC;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  width: 90%;
+  margin: 2em auto;
+  background-color: white;
+  padding: 1em;
+  line-height: 1.7em;
+  min-height: 70dvh; // about 70% of the screen height
+}
+
+a {
+  color: blue;
+
+  &:visited {
+    color: blue;
+  }
+}
+
+ul {
+  padding: 0em 2em;
+}

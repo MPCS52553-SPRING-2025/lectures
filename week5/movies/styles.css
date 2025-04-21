@@ -1,0 +1,48 @@
+body {
+  box-sizing: border-box;
+  background-color: #EEE;
+  font-family: system-ui;
+  font-size: 20px;
+}
+h1 {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.like {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+div {
+  display: flex;
+  column-gap: 36px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  div {
+    display: block;
+  }
+}
+
+article {
+  background-color: white;
+  text-align: center;
+  padding: 2em;
+  flex-basis: 25%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+img {
+  max-width: 75%;
+  box-shadow: 12px 12px 12px #777;
+}
