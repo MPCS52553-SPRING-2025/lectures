@@ -6,13 +6,13 @@
 document.addEventListener("DOMContentLoaded", setupListeners)
 
 function setupListeners() {
-  document.querySelector("form").addEventListener("submit", addItem)
+  document.querySelector("form").addEventListener("submit", addItemWithTemplate)
   document.querySelectorAll(".delete_btn").forEach(handleDeleteLink)
 }
 
 function handleDeleteLink(element) {
   element.addEventListener("click", (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     const linkClicked = e.target
     const groceryItem = linkClicked.closest("li") // travel upward to nearest list item
     groceryItem.remove()
@@ -50,11 +50,11 @@ function addItemWithTemplate(e) {
   const fragment = template.content.cloneNode(true)
   
   // 2. Update the span element based on the input field's value
-  const newItemSpan = clone.querySelector("li span")
+  const newItemSpan = fragment.querySelector("li span")
   newItemSpan.textContent = document.querySelector("#new_item").value
 
   // 3. Be ready for click events on the new element
-  handleDeleteLink(clone.querySelector("a"))
+  handleDeleteLink(fragment.querySelector("a"))
   
   // 4. Append the new element into the actual DOM
   const entireList = document.querySelector("#groceries")
