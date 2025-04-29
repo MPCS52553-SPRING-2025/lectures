@@ -1,6 +1,8 @@
 // -----------------------------------------------
 // New React code goes here:
 // -----------------------------------------------
+// import { ReactComponent } from 'react';
+
 function App() {
   const data = [
     { title: "The Mandalorian", img: 'images/mando.jpg', desc: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic." },
@@ -11,7 +13,7 @@ function App() {
     { title: "Toy Story", img: 'images/toy_story.jpg', desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room." },
   ]
   const movies = data.map(function(obj) {
-    return <Movie title={obj.title} img={obj.img} desc={obj.desc}></Movie>
+    return <Movie key={obj.title} title={obj.title} img={obj.img} desc={obj.desc}></Movie>
   })
   
   console.log(movies)
@@ -33,13 +35,34 @@ function Movie(details) {
         <p>
           {details.desc}
         </p>
-        <div class="actions">
-          <a class="like">&hearts; <span>0</span></a>
+        <div className="actions">
+          <LikeButton />
         </div>
     </article>
   )
 }
 
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { 
+      count: 0
+    }
+  }  
+
+  handleLikeClicked = (e) => {
+    e.preventDefault()
+    this.setState( {count: this.state.count + 1} )
+
+    console.log("Someone clicked the Like button.")
+  }
+
+  render() {
+    return (
+      <a className="like" onClick={this.handleLikeClicked}>&hearts; <span>{this.state.count}</span></a>
+    )
+  }
+}
 
 
 
