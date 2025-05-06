@@ -81,8 +81,8 @@ function drawPosters(url) {
     })
   })
 }
-
-function getApiKey() { return "PUT_API_KEY_HERE" }
+// bde024f3eb43f597aafe01ed9c9098c6
+function getApiKey() { return "bde024f3eb43f597aafe01ed9c9098c6" }
 
 function urlForSearch(keyword) {
   const apiKey = `api_key=${getApiKey()}`

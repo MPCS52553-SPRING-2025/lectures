@@ -10,7 +10,7 @@ function Movie(props) {
         <span className="badge bg-primary mx-3">
           {props.vote_average.toFixed(1)}
         </span>
-        <LikeButton />
+        <LikeButton title={props.title} onButtonClick={props.onLikeClicked} likeCount={props.likeCount}/>
       </p>
     </div>
   )
@@ -18,16 +18,20 @@ function Movie(props) {
 
 function LikeButton(props) {
 
+  function handleLikeClicked(e) {
+    e.preventDefault()
+    props.onButtonClick(props.title)
+  }
   return (
-    <button className="text-decoration-none btn text-danger ">&hearts; 
-      <span>0</span>
+    <button onClick={handleLikeClicked}  className="text-decoration-none btn text-danger ">&hearts; 
+      <span>{props.likeCount}</span>
     </button>
   )
 }
 
 function App() {
 
-  let data = [
+  let initialData = [
     { title: "The Princess Bride", poster_path: '/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
     { title: "Spider - Man", poster_path: '/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
     { title: "Star Wars", poster_path: '/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
@@ -38,12 +42,20 @@ function App() {
     { title: "Toy Story", poster_path: '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
   ]
   
-  const movies = data.map(movie_data => <Movie key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
-  
-  function setData(newData) { 
-    data = newData 
+  const [data, setData] = useState(initialData)
+  const [likes, setLikes] = useState({}) // { "Apollo 13": 100, "Princess Bride": 5, ...}
+
+  function incrementLikes(title) {
+    // { "Apollo 13": 8, "Princess Bride": 5, ...}
+    const currentLikeCount = likes[title] || 0
+    let obj = { }
+    obj[title] = currentLikeCount + 1   // obj: { "Princess Bride": 6 }
+    const newLikes = { ...likes, ...obj }    
+    setLikes(newLikes)
   }
 
+
+  const movies = data.map(movie_data => <Movie onLikeClicked={incrementLikes}  likeCount={likes[movie_data.title] || 0} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
 
   function handleNowPlayingButton(event) {
     console.log(event)
@@ -86,7 +98,7 @@ function App() {
   )
 }
 
-function getApiKey() { return "PUT_API_KEY_HERE" }
+function getApiKey() { return "bde024f3eb43f597aafe01ed9c9098c6" }
 
 // Pass in the "resource" you want to retrieve: 'top_movies' or 'now_playing'
 function urlForMovies(resource) {
