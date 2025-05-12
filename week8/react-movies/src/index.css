@@ -1,0 +1,14 @@
+body {
+  font-family: system-ui, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 960px;
+}
+img {
+  box-shadow: 8px 8px 8px #555;
+}
+
+.poster a,
+.poster a:visited,
+.poster a:hover {
+  text-decoration: none;
+  color: red;
+}
