@@ -1,33 +1,5 @@
 import { React, useState } from 'react';
-
-function Movie(props) {
-  return (
-    <div className="col-sm-3 text-center mb-2 poster">
-      <img src={'http://image.tmdb.org/t/p/w185' + props.poster_path} className="img-fluid" alt={props.title} />
-
-      <p className="mt-2">
-        {props.release_date ? props.release_date.substr(0, 4) : null}
-        <span className="badge bg-primary mx-3">
-          {props.vote_average.toFixed(1)}
-        </span>
-        <LikeButton title={props.title} onButtonClick={props.onLikeClicked} likeCount={props.likeCount}/>
-      </p>
-    </div>
-  )
-}
-
-function LikeButton(props) {
-
-  function handleLikeClicked(e) {
-    e.preventDefault()
-    props.onButtonClick(props.title)
-  }
-  return (
-    <button onClick={handleLikeClicked}  className="text-decoration-none btn text-danger ">&hearts; 
-      <span>{props.likeCount}</span>
-    </button>
-  )
-}
+import Movie from './Movie.jsx'
 
 function App() {
 
@@ -76,10 +48,16 @@ function App() {
     setData(initialData)
   }
 
+  function handleSearchSubmit(formData) {
+    const keyword = formData.get("search")
+    const url = urlForSearch(keyword)
+    fetch(url).then(response => response.json()).then(data => setData(data.results))
+  }
+
   return (
     <div>
       <header className="row mb-5 justify-content-between">
-        <form className="col-sm-4">
+        <form className="col-sm-4" action={handleSearchSubmit}>
           <input className="form-control" autoFocus name="search" type="text" placeholder="Search by title...">
           </input>
         </form>
