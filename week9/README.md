@@ -6,7 +6,7 @@ a database of movie votes.
 * Live URL of our back-end dashboard: https://mpcs-movies-ac5358d2aa9a.herokuapp.com
 * Git repository for back-end (optional): https://github.com/MPCS52553-SPRING-2025/ruby-movie-db.git
 
-We will learn when to a React hook called `useEffect` to control when 
+We will learn when to use a React hook called `useEffect` to control when 
 our API calls are executed during a component's lifecycle.
 
 * Review of HTTP 

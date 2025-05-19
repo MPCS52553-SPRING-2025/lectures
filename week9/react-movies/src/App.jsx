@@ -4,14 +4,14 @@ import Movie from './Movie.jsx'
 function App() {
 
   let initialData = [
-    { title: "The Princess Bride", poster_path: '/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Spider - Man", poster_path: '/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Star Wars", poster_path: '/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Jurassic Park", poster_path: 'https://image.tmdb.org/t/p/w185//b1xCNnyrPebIc7EWNZIa6jhb1Ww.jpg', release_date: '1993', vote_average: 10 },
-    { title: "Doctor Strange", poster_path: '/7WfK17BXE6szXlm4WOxfswgbdsL.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Apollo 13", poster_path: '/kzj95o9FlVxKziQq36mjES3wxel.jpg', release_date: '1999', vote_average: 10 },
-    { title: "The Matrix", poster_path: '//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg', release_date: '1999', vote_average: 10 },
-    { title: "Toy Story", poster_path: '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
+    { id: "2493", title: "The Princess Bride", poster_path: '/dvjqlp2sAhUeFjUOfQDgqwpphHj.jpg', release_date: '1999', vote_average: 10 },
+    { id: "557", title: "Spider - Man", poster_path: '/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', release_date: '1999', vote_average: 10 },
+    { id: "11", title: "Star Wars", poster_path: '/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg', release_date: '1999', vote_average: 10 },
+    { id: "329", title: "Jurassic Park", poster_path: 'https://image.tmdb.org/t/p/w185//b1xCNnyrPebIc7EWNZIa6jhb1Ww.jpg', release_date: '1993', vote_average: 10 },
+    { id: "284052", title: "Doctor Strange", poster_path: '/7WfK17BXE6szXlm4WOxfswgbdsL.jpg', release_date: '1999', vote_average: 10 },
+    { id: "568", title: "Apollo 13", poster_path: '/kzj95o9FlVxKziQq36mjES3wxel.jpg', release_date: '1999', vote_average: 10 },
+    { id: "603", title: "The Matrix", poster_path: '//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg', release_date: '1999', vote_average: 10 },
+    { id: "862", title: "Toy Story", poster_path: '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', release_date: '1999', vote_average: 10 },
   ]
   
   const [data, setData] = useState(initialData)
@@ -27,7 +27,7 @@ function App() {
   }
 
 
-  const movies = data.map(movie_data => <Movie onLikeClicked={incrementLikes}  likeCount={likes[movie_data.title] || 0} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
+  const movies = data.map(movie_data => <Movie identifier={movie_data.id} onLikeClicked={incrementLikes}  likeCount={likes[movie_data.title] || 0} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
 
   function handleNowPlayingButton(event) {
     console.log(event)
