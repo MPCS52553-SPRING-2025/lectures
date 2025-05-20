@@ -10,7 +10,7 @@ export default function Movie(props) {
         <span className="badge bg-primary mx-3">
           {props.vote_average.toFixed(1)}
         </span>
-        <LikeButton title={props.title} onButtonClick={props.onLikeClicked} likeCount={props.likeCount} />
+        <LikeButton identifier={props.identifier} />
       </p>
     </div>
   )

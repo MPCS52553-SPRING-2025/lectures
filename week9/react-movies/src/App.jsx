@@ -15,19 +15,8 @@ function App() {
   ]
   
   const [data, setData] = useState(initialData)
-  const [likes, setLikes] = useState({}) // { "Apollo 13": 100, "Princess Bride": 5, ...}
 
-  function incrementLikes(title) {
-    // { "Apollo 13": 8, "Princess Bride": 5, ...}
-    const currentLikeCount = likes[title] || 0
-    let obj = { }
-    obj[title] = currentLikeCount + 1   // obj: { "Princess Bride": 6 }
-    const newLikes = { ...likes, ...obj }    
-    setLikes(newLikes)
-  }
-
-
-  const movies = data.map(movie_data => <Movie identifier={movie_data.id} onLikeClicked={incrementLikes}  likeCount={likes[movie_data.title] || 0} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
+  const movies = data.map(movie_data => <Movie identifier={movie_data.id} key={movie_data.title} title={movie_data.title} release_date={movie_data.release_date} poster_path={movie_data.poster_path} vote_average={movie_data.vote_average} />)
 
   function handleNowPlayingButton(event) {
     console.log(event)
